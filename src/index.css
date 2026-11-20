@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    background: #ffffff;
+    color: #0a0a0a;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 3D Chrome Metal Railing */
+.rack-rail-3d {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #d4d4d8 18%,
+    #71717a 48%,
+    #e4e4e7 75%,
+    #52525b 100%
+  );
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.18),
+    0 2px 4px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.rack-upright-3d {
+  background: linear-gradient(90deg, #a1a1aa, #f4f4f5, #52525b);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hanger-glider-3d {
+  background: linear-gradient(180deg, #f4f4f5 0%, #a1a1aa 45%, #52525b 100%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.shoe-shelf-plank-3d {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #d4d4d8 24%,
+    #71717a 58%,
+    #e4e4e7 84%,
+    #52525b 100%
+  );
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.16),
+    0 2px 4px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.perspective-stage {
+  perspective: 1500px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.cutout-shadow {
+  filter: drop-shadow(0 20px 22px rgba(0, 0, 0, 0.24));
+}
+
+.cutout-shadow-shoe {
+  filter: drop-shadow(0 16px 14px rgba(0, 0, 0, 0.26));
+}
+
+@keyframes tickerScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-animate {
+  animation: tickerScroll 28s linear infinite;
+}
+
+.ticker-wrapper:hover .ticker-animate {
+  animation-play-state: paused;
+}
+
+@keyframes floatSlow3D {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotateX(2deg);
+  }
+}
+
+.float-3d-idle {
+  animation: floatSlow3D 5.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-animate,
+  .float-3d-idle {
+    animation: none !important;
+  }
+}

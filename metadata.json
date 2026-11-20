@@ -1,0 +1,6 @@
+{
+  "name": "OFFHOOK",
+  "description": "OFFHOOK — Interactive 3D animated streetwear & footwear e-commerce platform with Adults, Kids, Footwear racks, WhatsApp checkout, and PostgreSQL admin dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
